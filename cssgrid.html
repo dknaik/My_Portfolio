@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root{
+        --main-radius:5px;
+        --main-padding:5px;
+
+    }
+    body{
+        height: 100vh;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    *{
+        margin:0;
+        padding: 0;
+    }
+    .container{
+       display:grid;
+       height: 90%;
+       width:90%;
+       grid-template-columns: repeat(4,1fr);
+       grid-template-rows: 0.3fr 1.5fr 1.2fr 0.8fr;
+       grid-template-areas: "sidebar nav nav nav"
+       "sidebar main main main"
+       "sidebar content1 content2 content3"
+       "sidebar footer footer footer";
+       grid-gap:0.2rem;
+      
+       background: rgb(235, 94, 94);
+       position: relative;
+       overflow: hidden;
+       
+    }
+    nav{
+        background: rgb(146, 212, 146);
+        grid-area: nav;
+        border-radius: var(--main-radius);
+        padding-top: var(--main-padding);
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+        position: relative;
+    }
+    main{
+        background: rgb(182, 182, 236);
+        grid-area: main;
+         border-radius: var(--main-radius);
+        padding-top: var(--main-padding);
+    }
+    .sidebar{
+        background: rgb(236, 236, 150);
+        grid-area: sidebar;
+         border-radius: var(--main-radius);
+        padding-top: var(--main-padding);
+    }
+    #content1{
+        background: rgb(238, 152, 152);
+        grid-area: content1;
+         border-radius: var(--main-radius);
+        padding-top: var(--main-padding);
+    }
+    #content2{
+        background: rgb(238, 152, 209);
+                grid-area: content2;
+                 border-radius: var(--main-radius);
+        padding-top: var(--main-padding);
+
+    }
+    #content3{
+        background: rgb(238, 152, 156);
+                grid-area: content3;
+                 border-radius: var(--main-radius);
+        padding-top: var(--main-padding);
+
+    }
+    .footer{
+         background: rgb(152, 238, 219);
+                 grid-area: footer;
+                  border-radius: var(--main-radius);
+        padding-top: var(--main-padding);
+
+
+    }
+    /* //nav */
+ .menu{
+      width:300px;
+      height: 50%;
+      background: white;
+      position: relative;
+z-index: -1;
+opacity: 0;
+     transform: translateX(100%);
+     transition: all 1s;
+     overflow: hidden;
+     margin-right:40px;
+
+      
+    }
+    .menu ul{
+     display: flex;
+     
+    }
+    .active{
+        transform: translateX(0);
+        z-index: 1;
+        opacity: 1;
+    }
+
+    /* .menu:before{
+        content:"";
+        top:0;
+        left: 0;
+        width:100%;
+        height: 100%;
+        background: burlywood;
+        position: absolute;
+
+    } */
+   .menu ul li{
+        list-style: none;
+        width:100%;
+    }
+    .menu ul li a{
+        text-decoration: none;
+        background: rgb(236, 221, 221);
+        display: block;
+        margin:1px;
+        padding: auto;
+        
+        
+    }
+    .btn{
+        
+       width:50px;
+       height: 50%;
+      
+        
+    }
+    /* //navend */
+   
+    @media(max-width:550px){
+        .container{
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.4fr 0.4fr 1.5fr 1fr 1fr 1fr 0.8fr ;
+            /* //only 1 column is needed in the entire page */
+         grid-template-areas: 
+        "nav"
+        "sidebar"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+        }
+       
+    }
+    
+</style>
+<body>
+    
+    <div class="container">
+        <nav>
+        
+             <div class="menu">
+            <ul>
+                <li><a href="#" class="clickResume">Resume</a></li>
+                <li><a href="#">work</a></li>
+
+            </ul>
+        </div>
+        <div>
+        <button class="btn">click</button>
+
+        </div>
+        </nav>
+                
+<main>
+<div id="container">
+
+</div>
+
+</main>
+<div class="sidebar">Sidebar</div>
+<div id="content1">Content1</div>
+<div id="content2">Content2</div>
+<div id="content3">Content3</div>
+<div class="footer">footer</div>
+
+
+
+    </div>
+   
+<script>
+    const menu =document.querySelector('.menu');
+    const clickResume =document.querySelector('.clickResume');
+    
+const xhr = new XMLHttpRequest();
+const container =document.getElementById('container');
+
+    console.log(menu);
+const btn = document.querySelector('.btn');
+btn.addEventListener('click',function(){
+menu.classList.toggle('active');
+
+})
+
+clickResume.addEventListener('click',function(e){
+// e.preventDefault();
+xhr.onload =function(){
+    if(this.status===200){
+        console.log("ok");
+        container.innerHTML= xhr.responseText;
+
+    }else{
+        console.log("didnot receive 200 ok from response");
+    }
+}
+xhr.open('get','portfolioResume.html');
+xhr.send();
+    // history.pushState({},"","portfolioResume");//changes url
+//use data set to get html on clicking respectiv
+})
+
+
+
+</script>
+</body>
+</html>
