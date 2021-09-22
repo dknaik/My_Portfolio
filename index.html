@@ -50,7 +50,7 @@ background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
       
        /* background: rgb(235, 94, 94); */
        position: relative;
-       overflow: hidden;
+      
        margin: 30px;
        border-radius: 10px;
        /* border:1px solid black; */
@@ -344,18 +344,16 @@ border-radius: 50%;
     @media(max-width:600px){
         .container{
             grid-template-columns: 1fr;
-            grid-template-rows: 0.3fr 0.3fr 1.5fr 1fr  ;
+            grid-template-rows: 0.3fr 0.3fr 1.5fr 1fr;
             /* //only 1 column is needed in the entire page */
          grid-template-areas: 
         "nav"
         "sidebar"
-        "main"
-       ;
+        "main";
+       
 
         }
-        .portfolio p{
-            font-size: 20px;
-        }
+     
        
     }
     
