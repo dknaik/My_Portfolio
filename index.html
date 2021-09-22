@@ -72,6 +72,7 @@ background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
         padding-left: 10px;
         padding-right: 10px;
         /* padding-top: 20px; */
+        /* overflow-y: hidden; */
     }
     main{
         background: rgb(255, 255, 255);
@@ -97,34 +98,9 @@ background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
       flex-direction: column;
 align-items: center;        
     }
-    #content1{
-        background: rgb(238, 152, 152);
-        grid-area: content1;
-         border-radius: var(--main-radius);
-        padding-top: var(--main-padding);
-    }
-    #content2{
-        background: rgb(238, 152, 209);
-                grid-area: content2;
-                 border-radius: var(--main-radius);
-        padding-top: var(--main-padding);
+  
+    
 
-    }
-    #content3{
-        background: rgb(238, 152, 156);
-                grid-area: content3;
-                 border-radius: var(--main-radius);
-        padding-top: var(--main-padding);
-
-    }
-    .footer{
-         background: rgb(152, 238, 219);
-                 grid-area: footer;
-                  border-radius: var(--main-radius);
-        padding-top: var(--main-padding);
-
-
-    }
     /* //nav */
  .menu{
       width:200px;
@@ -146,11 +122,14 @@ opacity: 1;
      align-items: center;
      
      
+     
     }
     .active{
         transform: translateX(0);
         z-index: 1;
         opacity: 1;
+       
+
     }
     /* .active_remove{
         display: none;
@@ -201,6 +180,7 @@ opacity: 1;
        justify-content: center;
        border-radius: 10px;
        /* padding:5px; */
+     
       
         
     }
@@ -350,9 +330,34 @@ border-radius: 50%;
         "nav"
         "sidebar"
         "main";
-       
+       /* padding: 0;
+       margin: 0; */
 
         }
+
+        .menu{
+      width:200px;
+      height: 50%;
+      background: white;
+      position: relative;
+z-index: -1;
+opacity: 1;
+     transform: translateX(110%);
+     transition: all 1s;
+     overflow: hidden;
+     margin-right:40px;
+     /* text-align: center; */
+     display: none;
+      
+    }
+      .active{
+        transform: translateX(0);
+        z-index: 1;
+        opacity: 1;
+        display: block;
+       
+
+    }
      
        
     }
