@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
 </head>
 <style>
+    *{
+        font-weight: 100;
+        
+    }
+    /* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100&display=swap'); */
     :root{
         --main-radius:5px;
         --main-padding:5px;
+        --primary-color:rgba(0, 0, 0, 0.849);
 
     }
     body{
@@ -18,6 +27,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: #00DBDE;
+background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+
 
     }
     *{
@@ -29,40 +41,61 @@
        height: 90%;
        width:90%;
        grid-template-columns: repeat(4,1fr);
-       grid-template-rows: 0.3fr 1.5fr 1.2fr 0.8fr;
+       grid-template-rows: 0.5fr 1.5fr 1.2fr 0.8fr;
        grid-template-areas: "sidebar nav nav nav"
        "sidebar main main main"
-       "sidebar content1 content2 content3"
-       "sidebar footer footer footer";
+       "sidebar main main main"
+       "sidebar main main main";
        grid-gap:0.2rem;
       
-       background: rgb(235, 94, 94);
+       /* background: rgb(235, 94, 94); */
        position: relative;
        overflow: hidden;
+       margin: 30px;
+       border-radius: 10px;
+       /* border:1px solid black; */
+       color:var(--primary-color);
+       font-family: 'Roboto Slab', serif;
+
        
     }
     nav{
-        background: rgb(146, 212, 146);
+        background: rgb(255, 255, 255);
         grid-area: nav;
         border-radius: var(--main-radius);
         padding-top: var(--main-padding);
 
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: space-between;
         position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+        /* padding-top: 20px; */
     }
     main{
-        background: rgb(182, 182, 236);
+        background: rgb(255, 255, 255);
         grid-area: main;
          border-radius: var(--main-radius);
         padding-top: var(--main-padding);
+         padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 20px;
+        margin-top: 0px;
     }
     .sidebar{
-        background: rgb(236, 236, 150);
+        background: rgb(255, 255, 255);
         grid-area: sidebar;
-         border-radius: var(--main-radius);
+        /* margin-left: 20px; */
+        /* margin-right: 10px; */
+        border-radius: var(--main-radius);
         padding-top: var(--main-padding);
+        padding-bottom: var(--main-padding);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        /* border: 1px solid black; */
+      display: flex;
+      flex-direction: column;
+align-items: center;        
     }
     #content1{
         background: rgb(238, 152, 152);
@@ -94,21 +127,24 @@
     }
     /* //nav */
  .menu{
-      width:300px;
+      width:200px;
       height: 50%;
       background: white;
       position: relative;
 z-index: -1;
-opacity: 0;
-     transform: translateX(100%);
+opacity: 1;
+     transform: translateX(110%);
      transition: all 1s;
      overflow: hidden;
      margin-right:40px;
-
+     /* text-align: center; */
+     
       
     }
     .menu ul{
      display: flex;
+     align-items: center;
+     
      
     }
     .active{
@@ -116,38 +152,194 @@ opacity: 0;
         z-index: 1;
         opacity: 1;
     }
-
-    /* .menu:before{
-        content:"";
-        top:0;
-        left: 0;
-        width:100%;
-        height: 100%;
-        background: burlywood;
-        position: absolute;
-
+    /* .active_remove{
+        display: none;
     } */
+
    .menu ul li{
         list-style: none;
         width:100%;
+        height:100%;
+          display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        position: relative;
+
+        
     }
     .menu ul li a{
+        position: absolute;
         text-decoration: none;
-        background: rgb(236, 221, 221);
-        display: block;
-        margin:1px;
+        background: rgb(202, 126, 126);
+        /* display: block; */
         padding: auto;
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color:white;
+        border-radius: 0px 10px 0px 10px;
+    
         
         
-    }
+    
+        
+        
+      
+        
+        
+       }
     .btn{
-        
-       width:50px;
-       height: 50%;
+        position: relative;
+       width:40px;
+       height: 40px;
+       background: blue;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       border-radius: 10px;
+       /* padding:5px; */
       
         
     }
+    .btn .line1{
+        
+        
+      width:40px;
+      height: 4px;
+      background: white;
+      margin: 2px;
+    }
+     .btn .line2{
+        
+       
+      width:40px;
+      height: 4px;
+      background: white;
+        margin: 2px;
+    }
+     .btn .line3{
+        
+        
+      width:40px;
+      height: 4px;
+      background: white;
+        margin: 2px;
+    }
+
+
     /* //navend */
+    nav .portfolio p{
+     font-size: 40px;
+     font-weight: bold;
+    
+    }
+
+    /* //sidebar */
+    .profile img{
+  width:110px;
+  height: 110px;
+  border-radius: 50%;
+  padding-top: 10px;
+  
+    }
+    .profile{
+        position: relative;
+        width: 110px;
+        height: 110px;
+    }
+    .profile::before{
+content: "";
+position: absolute;
+top:10px;
+left:0;
+width: 100%;
+height: 100%;
+background: rgb(75, 74, 74);
+opacity: 0.5;
+z-index: 1;
+border-radius: 50%;
+
+    }
+    .profile:hover::before{
+       background: transparent;
+
+    }
+    .sidebar p{
+       padding-top: 20px;
+    }
+    .sidebar h4{
+        margin-top: 20px;
+        background: whitesmoke;
+        padding: 5px;
+        border-radius: 10px;
+    }
+    .gitaddsec{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: whitesmoke;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .gitaddsec .address {
+        
+        display: flex;
+        flex-direction: row;
+        
+
+        align-items: center;
+        justify-content: center;
+        margin:10px;
+        
+    }
+    .address div{
+      margin-top: 5px;
+    }
+    .gitaddsec .address p{
+        padding: 0;
+        margin-left: 10px;
+    }
+    .sidebar .codepen{
+        width:15px;
+        height: 15px;
+    }
+    .sidebar .insta{
+        width:15px;
+        height: 15px;
+    }
+       .sidebar .twitter{
+        width:15px;
+        height: 15px;
+    }
+    .address .location{
+         width:15px;
+        height: 15px;
+    }
+    .address .email{
+         width:15px;
+        height: 15px;
+    }
+    .address .github{
+          width:15px;
+        height: 15px;
+    }
+    .sidebar .sidbtn{
+        margin: 20px;
+        padding:10px;
+        background: blue;
+        border:none;
+        border-radius: 10px;
+    }
+    .sidebar .sidbtn a{
+        text-decoration: none;
+        color:whitesmoke;
+    }
+    
+   
    
     @media(max-width:550px){
         .container{
@@ -158,10 +350,7 @@ opacity: 0;
         "nav"
         "sidebar"
         "main"
-        "content1"
-        "content2"
-        "content3"
-        "footer";
+       ;
         }
        
     }
@@ -171,16 +360,26 @@ opacity: 0;
     
     <div class="container">
         <nav>
+            <div class="portfolio">
+                <p>Portfolio</p>
+            </div>
+
         
              <div class="menu">
+                
             <ul>
-                <li><a href="#" class="clickResume">Resume</a></li>
-                <li><a href="#">work</a></li>
+                <li><a href="#" class="resume" data-id="resume">Resume</a></li>
+                <li><a href="#" class="work" data-id="work">work</a></li>
 
             </ul>
         </div>
         <div>
-        <button class="btn">click</button>
+        <div class="btn">
+            <span class="line1"></span>
+            <span class="line2"></span>
+            <span class="line3"></span>
+
+        </div>
 
         </div>
         </nav>
@@ -191,11 +390,59 @@ opacity: 0;
 </div>
 
 </main>
-<div class="sidebar">Sidebar</div>
-<div id="content1">Content1</div>
+<div class="sidebar">
+    <div class="profile">
+        <img src="images/pp.jpg" alt="">
+    </div>
+    <p>Dinesh Naik</p>
+    <h4>Web Developer</h4>
+    <p><img class ="codepen" src="images/codepen.png" alt=""></p>
+    <p><img class="insta" src="images/insta22.png" alt=""></p>
+    <p><img class ="twitter" src="images/twitter1.png" alt=""></p>
+    <!-- <i class="fab fa-codepen"></i> -->
+    <!-- <i class="fab fa-instagram"></i> -->
+
+    <div class="gitaddsec">
+        <div class="address">
+           <div>
+                       <img class="location" src="images/location1.png" alt="">
+
+           </div>
+                
+            
+            <p>Bangalore</p>
+
+         
+       
+         
+        </div>
+        <div class="address">
+             <div>
+<img class="email" src="images/email.png" alt="">
+           </div>
+                
+            
+            <p>naik96657@gmail.com</p>
+        </div>
+
+           <div class="address">
+             <div>
+      <img class="github" src="images/github.png" alt="">
+
+           </div>
+                
+            
+            <p>github</p>
+        </div>
+    </div>
+
+    <button class="sidbtn"><a href="mailto:naik96657@gmail.com">Email Me</button>
+
+</div>
+<!-- <div id="content1">Content1</div>
 <div id="content2">Content2</div>
 <div id="content3">Content3</div>
-<div class="footer">footer</div>
+<div class="footer">footer</div> -->
 
 
 
@@ -210,13 +457,48 @@ const container =document.getElementById('container');
 
     console.log(menu);
 const btn = document.querySelector('.btn');
-btn.addEventListener('click',function(){
+btn.addEventListener('click',function(e){
+    console.log(e.currentTarget);
 menu.classList.toggle('active');
+
+if(menu.classList.contains('active')){
+    console.log("containes");
+}else{
+
+getHtmlFile("about.html");
+    
+}
+
+
 
 })
 
-clickResume.addEventListener('click',function(e){
-// e.preventDefault();
+
+ 
+
+
+//menu buttons
+menu.addEventListener('click',function(e){
+   console.log(e.target);
+   console.log(e.target.className);
+   if(e.target.className ==="resume"){
+       console.log("resume");
+       getHtmlFile("portfolioResume.html");
+
+   }
+     if(e.target.className ==="work"){
+       console.log("work");
+        getHtmlFile("work.html");
+   }
+   
+   
+
+    // history.pushState({},"","portfolioResume");//changes url
+//use data set to get html on clicking respectiv
+})
+
+function getHtmlFile(value){
+    
 xhr.onload =function(){
     if(this.status===200){
         console.log("ok");
@@ -226,11 +508,26 @@ xhr.onload =function(){
         console.log("didnot receive 200 ok from response");
     }
 }
-xhr.open('get','portfolioResume.html');
+xhr.open('get',value);
 xhr.send();
-    // history.pushState({},"","portfolioResume");//changes url
-//use data set to get html on clicking respectiv
+}
+
+
+document.addEventListener('DOMContentLoaded',function(){
+   xhr.onload =function(){
+    if(this.status===200){
+        console.log("ok");
+        container.innerHTML= xhr.responseText;
+
+    }else{
+        console.log("didnot receive 200 ok from response");
+    }
+}
+xhr.open('get','about.html');
+xhr.send();
 })
+
+
 
 
 

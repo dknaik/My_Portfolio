@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\Js Projects\\js_Game"
+		},
+		{
+			"path": "..\\work"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Dinesh_Portfolio"
+	}
+}
