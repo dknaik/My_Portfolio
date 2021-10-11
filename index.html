@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
+  <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
 </head>
 <style>
     *{
@@ -53,7 +54,7 @@ background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
       
        margin: 30px;
        border-radius: 10px;
-       /* border:1px solid black; */
+       border:1px solid black;
        color:var(--primary-color);
        font-family: 'Roboto Slab', serif;
       
@@ -85,6 +86,7 @@ background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
         padding-right: 10px;
         padding-top: 20px;
         margin-top: 0px;
+        
     }
     .sidebar{
         background: rgb(255, 255, 255);
@@ -324,6 +326,9 @@ border-radius: 50%;
    
    
     @media(max-width:600px){
+        body{
+            background: white;
+        }
         .container{
             grid-template-columns: 1fr;
             grid-template-rows: 0.3fr 0.3fr 1.5fr 1fr;
@@ -334,12 +339,14 @@ border-radius: 50%;
         "main";
        /* padding: 0;
        margin: 0; */
-       margin:20px;
+       width: 100%;
+       background: rgb(255, 255, 255);
+       
 
         }
 
         .menu{
-      width:200px;
+      width:100%;
       height: 50%;
       background: white;
       position: relative;
@@ -352,6 +359,7 @@ opacity: 1;
      /* text-align: center; */
      display: none;
       
+
     }
       .active{
         transform: translateX(0);
@@ -363,10 +371,35 @@ opacity: 1;
     }
     .main{
         margin-bottom: 20px;
+      
+    }
+      nav .portfolio p{
+     font-size: 30px;
+     font-weight: bold;
+    
+    }
+     nav{
+        background: rgb(255, 255, 255);
+        grid-area: nav;
+        border-radius: var(--main-radius);
+        padding-top: var(--main-padding);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+        position: relative;
+        padding-left: 10px;
+        padding-right: 10px;
+        /* width: 100%; */
+        /* padding-top: 20px; */
+        /* overflow-y: hidden; */
     }
      
        
     }
+    /* @media screen {
+        
+    } */
     
 </style>
 <body>
@@ -501,7 +534,9 @@ menu.addEventListener('click',function(e){
    }
      if(e.target.className ==="work"){
        console.log("work");
-        getHtmlFile("work.html");
+        // jQuery('container').load('work.html');
+
+        // getHtmlFile("work.html");
    }
    
    
@@ -545,5 +580,8 @@ xhr.send();
 
 
 </script>
+ <script src="workscript.js">
+          
+       </script>
 </body>
 </html>

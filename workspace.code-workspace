@@ -4,10 +4,28 @@
 			"path": "."
 		},
 		{
-			"path": "..\\Js Projects\\js_Game"
+			"path": "..\\HTML-CSS"
 		},
 		{
-			"path": "..\\work"
+			"path": "..\\React-Udemy-Course"
+		},
+		{
+			"path": "..\\react Projects"
+		},
+		{
+			"path": "..\\react-todo"
+		},
+		{
+			"path": "..\\react-to-search"
+		},
+		{
+			"path": "..\\React-recipe-app"
+		},
+		{
+			"path": "..\\Js Projects"
+		},
+		{
+			"path": "..\\Test"
 		}
 	],
 	"settings": {

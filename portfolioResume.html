@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap" rel="stylesheet">
@@ -16,10 +17,94 @@
     ul li{
         color:rgb(36, 12, 12);
     }
+    .resume-container{
+        display:grid;
+        width:100%;
+        height:100%;
+        /* background: green; */
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 5px;
+        column-gap: 5px;
+    }
+    .box1,.box2,.box3,.box4{
+        display: flex;
+        align-items: flex-start;
+        background: #F5F5F5;
+        border-radius: 5px;
+
+    }
+    .box1 h1,.box2 h1,.box3 h1,.box4 h1{
+        margin: 0;
+    }
+    
+    .box1 p,.box2 p,.box3 p,.box4 p{
+        margin: 0;
+        margin-right: 10px;
+    }
+    /* .box1{
+        background: #F5F5F5;
+    }
+     .box1{
+        background: #F5F5F5;
+    }
+     .box1{
+        background: #F5F5F5;
+    } */
 </style>
 <body>
-    <ul>
-        <li>Apple</li>
-    </ul>
+  <h2>Resume</h2>
+   <div class="resume-container">
+    <div class="box1">
+     
+            <p><i class="fas fa-graduation-cap"></i></p>
+           
+      
+        <div>
+              <h1>Education</h1>
+        <p>B.TEch</p>
+        <p>2016-2019</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ad odio alias iusto eos quo ut. Possimus distinctio mollitia voluptates?</p>
+        </div>
+      
+    </div>
+    <div class="box2">
+           <p><i class="fas fa-graduation-cap"></i></p>
+           
+      
+        <div>
+              <h1>Education</h1>
+        <p>B.TEch</p>
+        <p>2016-2019</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ad odio alias iusto eos quo ut. Possimus distinctio mollitia voluptates?</p>
+        </div>
+
+    </div>
+    <div class="box3">
+             <p><i class="fas fa-graduation-cap"></i></p>
+           
+      
+        <div>
+              <h1>Education</h1>
+        <p>B.TEch</p>
+        <p>2016-2019</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ad odio alias iusto eos quo ut. Possimus distinctio mollitia voluptates?</p>
+        </div>
+    </div>
+    <div class="box4">
+             <p><i class="fas fa-graduation-cap"></i></p>
+           
+      
+        <div>
+              <h1>Education</h1>
+        <p>B.TEch</p>
+        <p>2016-2019</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ad odio alias iusto eos quo ut. Possimus distinctio mollitia voluptates?</p>
+        </div>
+    </div>
+   </div>
+
+    <script>
+        console.log("Ranjit");
+    </script>
 </body>
 </html>
